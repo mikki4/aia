@@ -4,10 +4,10 @@
     <title>Adventures in ASL</title>
     <description>Adventures in ASL (American Sign Language) is an after school program that helps kids learn sign language and deaf culture.
 </description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Nov 2017 20:37:32 -0500</pubDate>
-    <lastBuildDate>Mon, 27 Nov 2017 20:37:32 -0500</lastBuildDate>
+    <link>/aia/</link>
+    <atom:link href="/aia/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 27 Nov 2017 21:56:34 -0500</pubDate>
+    <lastBuildDate>Mon, 27 Nov 2017 21:56:34 -0500</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Thu, 26 May 2016 09:18:26 -0400</pubDate>
-        <link>/jekyll/update/2016/05/26/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">/jekyll/update/2016/05/26/welcome-to-jekyll.html</guid>
+        <link>/aia/jekyll/update/2016/05/26/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">/aia/jekyll/update/2016/05/26/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
