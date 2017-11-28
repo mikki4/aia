@@ -137,7 +137,7 @@ gulp.task('optimize-html-prod', ['optimize-js-prod'], function() {
 		.pipe(gulp.dest('_site/'))
     .pipe(notify({ message: 'HTML-PROD task complete' }));
 });
-gulp.task('push-to-gh-pages', ['optimize-html-prod'], function() {
+gulp.task('push-to-gh-pages', /*['optimize-html-prod'],*/ function() {
   return gulp.src('./_site/**/*')
     .pipe(ghPages());
 });
