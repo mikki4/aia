@@ -3,12 +3,7 @@
 
 
 
-<h1 align="center">Impatient-Jekyll</h1>
-<div align="center">Opinionated Jekyll starter kit</div><div align="center">Get a fast local workflow, and a strongly optimized website in production.</div>
-
-
-
-## [View demos and full documentation &rarr;](http://bdavidxyz.github.io/impatient-jekyll)
+<h1 align="center">Adventures in ASL...based on Impatient-Jekyll</h1>
 
 ## How to use it
 
@@ -24,8 +19,8 @@ Tested with : node 5.12.0, jekyll 3.1.6, ruby 2.3.0
 
 ```shell
 
-$ git clone https://github.com/bdavidxyz/impatient-jekyll
-$ cd impatient-jekyll
+$ git clone https://github.com/mikki4/aia
+$ cd aia
 $ npm install
 $ $(npm bin)/gulp
  # ta-da ! the browser launches itself,
