@@ -16,10 +16,10 @@ body {
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
-  -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
-  font-kerning: normal; }
+  -webkit-font-kerning: normal;
+          font-kerning: normal; }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -94,7 +94,8 @@ pre,
 code {
   font-size: 15px;
   border: 1px solid #e8e8e8;
-  border-radius: 3px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
   background-color: #eef; }
 
 code {
@@ -180,7 +181,8 @@ pre {
       right: 15px;
       background-color: #fdfdfd;
       border: 1px solid #e8e8e8;
-      border-radius: 5px;
+      -webkit-border-radius: 5px;
+              border-radius: 5px;
       text-align: right; }
       .site-nav .menu-icon {
         display: block;

@@ -4,10 +4,10 @@
     <title>Adventures in ASL</title>
     <description>Adventures in ASL (American Sign Language) is an after school program that helps kids learn sign language and deaf culture.
 </description>
-    <link>/aia/</link>
-    <atom:link href="/aia/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Dec 2017 12:10:08 -0500</pubDate>
-    <lastBuildDate>Mon, 04 Dec 2017 12:10:08 -0500</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 04 Dec 2017 12:32:47 -0500</pubDate>
+    <lastBuildDate>Mon, 04 Dec 2017 12:32:47 -0500</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
@@ -39,8 +39,8 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 [jekyll-talk]: https://talk.jekyllrb.com/ --&gt;
 </description>
         <pubDate>Thu, 26 May 2016 00:00:00 -0400</pubDate>
-        <link>/aia/2016/05/26/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">/aia/2016/05/26/welcome-to-jekyll.html</guid>
+        <link>/2016/05/26/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">/2016/05/26/welcome-to-jekyll.html</guid>
         
         
       </item>
