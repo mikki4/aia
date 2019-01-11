@@ -315,6 +315,22 @@ pre {
       .post-content h4 {
         font-size: 18px; } }
 
+.steps {
+  font-size: 18px;
+  display: flex;
+  list-style-position: inside;
+  margin-left: 0;
+  width: 100%; }
+  .steps li {
+    border: 2px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center; }
+  .steps form {
+    padding-top: 5px; }
+
 /**
  * Syntax highlighting styles
  */
