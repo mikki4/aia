@@ -12,7 +12,7 @@ var notify       = require('gulp-notify');
 var prefix       = require('gulp-autoprefixer');
 var cp           = require('child_process');
 var fs           = require('fs');
-var ghPages      = require('gulp-gh-pages');
+var ghpages      = require('gh-pages');
 var extract      = require('gulp-html-extract');
 var jekyll       = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages     = {
@@ -141,9 +141,8 @@ gulp.task('optimize-html-prod', ['optimize-js-prod'], function() {
     .pipe(notify({ message: 'HTML-PROD task complete' }));
 });
 */
-gulp.task('push-to-gh-pages', /*['optimize-html-prod'],*/ function() {
-  return gulp.src('./_site/**/*')
-    .pipe(ghPages());
+gulp.task('push-to-gh-pages', function() {
+    return ghpages.publish('_site')
 });
 gulp.task('deploy',
   gulp.series('jekyll-build-prod'),
