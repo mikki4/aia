@@ -33,14 +33,14 @@ gulp.task('jekyll-build', function (done) {
 /**
  * Rebuild Jekyll & do page reload
  */
- gulp.task('jekyll-rebuild', ['optimize-html'], function () {
+ gulp.task('jekyll-rebuild', function () {
      browserSync.reload();
  });
 
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['optimize-html'], function() {
+gulp.task('browser-sync', function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -51,7 +51,7 @@ gulp.task('browser-sync', ['optimize-html'], function() {
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
-gulp.task('optimize-css', ['jekyll-build'], function () {
+gulp.task('optimize-css', gulp.series('jekyll-build'), function () {
     return gulp.src('_site/css/main.css')
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(rename('all.min.css'))
@@ -59,15 +59,15 @@ gulp.task('optimize-css', ['jekyll-build'], function () {
         .pipe(browserSync.reload({stream:true}))
 });
 
-
-gulp.task('optimize-js', ['optimize-css'], function() {
+/** 
+gulp.task('optimize-js', gulp.parallel('optimize-css'), function() {
      return gulp;
 });
 
-gulp.task('optimize-html', ['optimize-js'], function() {
+gulp.task('optimize-html', gulp.parallel('optimize-js'), function() {
 	return gulp;
 });
-
+*/
 /**
  * Watch html/md files, run jekyll & reload BrowserSync
  */
@@ -86,23 +86,25 @@ gulp.task('watch', function () {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', gulp.series('browser-sync', 'watch'));
 
 
 
 /**
 * Create production-ready website
 */
+
 gulp.task('jekyll-build-prod', function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn( jekyll , ['build', '--config', '_config.yml,_config.prod.yml'], {stdio: 'inherit'})
         .on('close', done);
 });
+/** 
 gulp.task('optimize-css-prod', ['jekyll-build-prod'], function () {
     return gulp.src('_site/css/main.css')
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(uncss({
-           html: ['_site/**/*.html'],
+           html: ['_site/**\*.html'],
            ignore: []
        }))
         .pipe(rename('all.min.css'))
@@ -111,6 +113,7 @@ gulp.task('optimize-css-prod', ['jekyll-build-prod'], function () {
         .pipe(browserSync.reload({stream:true}))
         .pipe(notify({ message: 'CSS-PROD task complete' }));
 });
+/** 
 gulp.task('optimize-js-prod', ['optimize-css-prod'], function() {
   return gulp
             .src("_site/index.html")
@@ -121,7 +124,7 @@ gulp.task('optimize-js-prod', ['optimize-css-prod'], function() {
             .pipe(notify({ message: 'JS-PROD task complete' }));
 });
 gulp.task('optimize-html-prod', ['optimize-js-prod'], function() {
-	return gulp.src('_site/**/*.html')
+	return gulp.src('_site/**\*.html')
 
 		.pipe(replace(/<link rel=\"stylesheet\" href=\"\/public\/css\/all.min.css\"[^>]*>/, function(s) {
 			var style = fs.readFileSync('_site/public/css/all.min.css', 'utf8');
@@ -137,13 +140,14 @@ gulp.task('optimize-html-prod', ['optimize-js-prod'], function() {
 		.pipe(gulp.dest('_site/'))
     .pipe(notify({ message: 'HTML-PROD task complete' }));
 });
+*/
 gulp.task('push-to-gh-pages', /*['optimize-html-prod'],*/ function() {
   return gulp.src('./_site/**/*')
     .pipe(ghPages());
 });
 gulp.task('deploy',
-  ['jekyll-build-prod',
-    'optimize-css-prod',
+  gulp.series('jekyll-build-prod'),
+   /**'optimize-css-prod',
     'optimize-js-prod',
-    'optimize-html-prod',
-    'push-to-gh-pages']);
+    'optimize-html-prod', */ 
+    gulp.series('push-to-gh-pages'));
